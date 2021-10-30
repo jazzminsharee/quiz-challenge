@@ -33,9 +33,16 @@ console.log("countdown");
     
 }
 
+// call the next question
+function getQuestion() {
+    // current question
+    var currentQuestion = questions[questionIndex];
+    // show the question
+}
+
 function startQuiz() {
     countdown();
-    
+
 }
 
 buttonEl.addEventListener("click", function(){
