@@ -6,13 +6,14 @@
 var timerEl = document.getElementById('countdown');
 var mainEl = document.getElementById('main');
 var buttonEl = document.getElementById('start');
-
 var listEl = document.createElement("button");
 
 var questionsEl = document.querySelector("#questions");
-var ulEl = document.createElement("ul");
-
+var questionTitle = document.querySelector("#question-title");
+var optionsDiv = document.querySelector("#options");
 var questionIndex = 0;
+
+
 
 
 function countdown() {
@@ -37,12 +38,26 @@ console.log("countdown");
 function getQuestion() {
     // current question
     var currentQuestion = questions[questionIndex];
+    console.log(currentQuestion);
     // show the question
+    questionTitle.textContent = currentQuestion.title;
+    // loop show the choices 
+    optionsDiv.textContent = "";
+    currentQuestion.options.forEach((option) => {
+        var optionsButton = document.createElement("button");
+        optionsButton.textContent = option;
+        optionsButton.setAttribute("value", option);
+        optionsDiv.appendChild(optionsButton);
+        //optionsButton.onclick = answerCheck
+        console.log()
+    });
 }
+
+
 
 function startQuiz() {
     countdown();
-
+    getQuestion();
 }
 
 buttonEl.addEventListener("click", function(){

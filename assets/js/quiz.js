@@ -3,22 +3,22 @@
 var questions = [
     {
         title: "What do you need in order to execute a function?",
-        choices: ["callback", "variable", "semicolon", "all of the above"],
+        options: ["callback", "variable", "semicolon", "all of the above"],
         answer: "all of the above",
     },
     {
         title: "A true or false statement in Javascript is known as:",
-        choices: ["an object", "a variable", "a boolean", "a string"],
+        options: ["an object", "a variable", "a boolean", "a string"],
         answer: "a boolean",
     },
     {
         title: "The name:value pairs contained in an object are called ______.",
-        choices: ["properties", "data", "methods", "all of the above"],
+        options: ["properties", "data", "methods", "all of the above"],
         answer: "all of the above",
     },
     {
         title: "What syntax is used to target an event?",
-        choices: ["a:hover", "event.target", "('click', function(){)", "input:focus"],
+        options: ["a:hover", "event.target", "('click', function(){)", "input:focus"],
         answer: "event.target",
     },
 ];
