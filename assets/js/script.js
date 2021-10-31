@@ -12,7 +12,7 @@ var questionsEl = document.querySelector("#questions");
 var questionTitle = document.querySelector("#question-title");
 var optionsDiv = document.querySelector("#options");
 var questionIndex = 0;
-
+var timeLeft = 60;
 
 
 
@@ -61,9 +61,23 @@ function answerCheck() {
         if (questionIndex < questions.length) {
             getQuestion();
 
-        } 
+        } else {
+            //endGame();
+        }
+    } else {
+        alert("Incorrect.");
+        timeLeft -= 10;
     }
 }
+
+// end the game
+//function gameEnd() {
+    //
+
+    // replace questions with user's score
+    //questionsEl.textContent = 'Your Score is...${timeLeft}';
+    // show results screen
+//}
 
 function startQuiz() {
     countdown();
