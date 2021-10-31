@@ -48,12 +48,22 @@ function getQuestion() {
         optionsButton.textContent = option;
         optionsButton.setAttribute("value", option);
         optionsDiv.appendChild(optionsButton);
-        //optionsButton.onclick = answerCheck
+        optionsButton.onclick = answerCheck;
         console.log()
     });
 }
 
+function answerCheck() {
+    // check the user selection against correct answer
+    if (this.value === questions[questionIndex].answer) {
+        alert("Correct!");
+        questionIndex++;
+        if (questionIndex < questions.length) {
+            getQuestion();
 
+        } 
+    }
+}
 
 function startQuiz() {
     countdown();
