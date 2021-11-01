@@ -1,0 +1,20 @@
+h1 {
+   text-align: center; 
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.countdown {
+    text-align: center;
+}
+
+article {
+    text-align: center;
+}
+
+.options {
+    display: block;
+}

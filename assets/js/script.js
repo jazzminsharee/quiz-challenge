@@ -48,6 +48,10 @@ function getQuestion() {
         var optionsButton = document.createElement("button");
         optionsButton.textContent = option;
         optionsButton.setAttribute("value", option);
+        // Styling
+        var styleButton = "display: block; margin: 0 auto";
+        optionsButton.setAttribute('style', styleButton);
+        
         optionsDiv.appendChild(optionsButton);
         optionsButton.onclick = answerCheck;
     });
@@ -64,11 +68,11 @@ function answerCheck() {
           gameEnd();
         }
     } else {
-        alert("Incorrect.");
+        alert("Incorrect. You have received a ten second penalty!");
         timeLeft -= 10;
     }
 } 
-
+            
 
 // end the game
 function gameEnd() {
@@ -76,6 +80,8 @@ function gameEnd() {
     timerEl.textContent = "";
     // replace questions with user's score
     questionsEl.textContent = "Your score is..." + timeLeft + "!";
+    // hide start button after score is displayed
+    document.getElementById('start').style.visibility='hidden';
     // show results screen
     saveBestScore();
 }
@@ -83,7 +89,7 @@ function gameEnd() {
 // save best score 
 function saveBestScore() {
     // prompt for initials 
-    var willSave = prompt("Enter your initials.");
+    var willSave = prompt("Enter your initials if you would like to save your score.");
     if (willSave !== "") {
         var bestscores = 
           JSON.parse(window.localStorage.getItem("bestscores")) || [];
