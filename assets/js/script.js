@@ -13,13 +13,14 @@ var questionTitle = document.querySelector("#question-title");
 var optionsDiv = document.querySelector("#options");
 var questionIndex = 0;
 var timeLeft = 60;
+var timeInterval;
 
 
 
 function countdown() {
-    var timeLeft = 60;
+     timeLeft = 60;
 console.log("countdown");
-    var timeInterval = setInterval(function() {
+    timeInterval = setInterval(function() {
         console.log("timeIntervalStarted");
         if (timeLeft > 0 ) {
             timerEl.textContent = timeLeft 
@@ -49,7 +50,6 @@ function getQuestion() {
         optionsButton.setAttribute("value", option);
         optionsDiv.appendChild(optionsButton);
         optionsButton.onclick = answerCheck;
-        console.log()
     });
 }
 
@@ -60,24 +60,46 @@ function answerCheck() {
         questionIndex++;
         if (questionIndex < questions.length) {
             getQuestion();
-
         } else {
-            //endGame();
+          gameEnd();
         }
     } else {
         alert("Incorrect.");
         timeLeft -= 10;
     }
-}
+} 
+
 
 // end the game
-//function gameEnd() {
-    //
-
+function gameEnd() {
+    clearInterval(timeInterval);
+    timerEl.textContent = "";
     // replace questions with user's score
-    //questionsEl.textContent = 'Your Score is...${timeLeft}';
+    questionsEl.textContent = "Your score is..." + timeLeft + "!";
     // show results screen
-//}
+    saveBestScore();
+}
+
+// save best score 
+function saveBestScore() {
+    // prompt for initials 
+    var willSave = prompt("Enter your initials.");
+    if (willSave !== "") {
+        var bestscores = 
+          JSON.parse(window.localStorage.getItem("bestscores")) || [];
+        // new score for current player
+        var newScore = {
+            score: timeLeft,
+            initials: willSave,
+        };
+        grade = newScore.score;
+        players = newScore.initials;
+        // save to local storage
+        bestscores.push(newScore);
+        window.localStorage.setItem("bestscores", JSON.stringify(bestscores));
+    }
+}
+
 
 function startQuiz() {
     countdown();
