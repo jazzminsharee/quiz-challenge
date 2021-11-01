@@ -1,5 +1,11 @@
 h1 {
    text-align: center; 
+   background-color: aquamarine;
+}
+
+h2 {
+    text-align: center;
+    font-size: 28px;
 }
 
 .container {
@@ -7,14 +13,43 @@ h1 {
     justify-content: center;
 }
 
+button {
+    background-color: aquamarine;
+    font-size: large;
+    padding: 10px 30px;
+}
+
 .countdown {
     text-align: center;
+    font-size: x-large;
 }
 
 article {
     text-align: center;
+    margin-top: 20px;
+}
+
+article span {
+    font-size: x-large;
 }
 
 .options {
     display: block;
+}
+
+.play-again {
+   text-align: center;
+}
+
+.card {
+    text-align: center;
+    background-color: aquamarine;
+    padding-top: 5px;
+  
+}
+
+table {
+    padding-top: 10px;
+    padding-bottom: 30px;
+    font-size: x-large;
 }

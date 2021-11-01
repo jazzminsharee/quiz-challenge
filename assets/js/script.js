@@ -49,9 +49,9 @@ function getQuestion() {
         optionsButton.textContent = option;
         optionsButton.setAttribute("value", option);
         // Styling
-        var styleButton = "display: block; margin: 0 auto";
+        var styleButton = "display: block; margin: 10px auto; padding: 5px 10px";
         optionsButton.setAttribute('style', styleButton);
-        
+
         optionsDiv.appendChild(optionsButton);
         optionsButton.onclick = answerCheck;
     });
