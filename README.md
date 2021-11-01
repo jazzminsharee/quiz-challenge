@@ -1,8 +1,8 @@
 # quiz-challenge
 
-! [] (assets/images/quiz-challenge-ss1.png)
+! [] (./assets/images/quiz-challenge1.png)
 
-! [] (assets/images/quiz-challenge-ss2.png)
+! [] (assets/images/quiz-challenge2.png)
 
 ## Purpose 
 
